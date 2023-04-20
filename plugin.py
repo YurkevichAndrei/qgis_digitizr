@@ -9,6 +9,7 @@ from .qgsmaptooladdlinebuffer import QgsMapToolAddLineBuffer
 
 from . import settings
 
+
 class DigitizrPlugin(object):
     """QGIS Plugin Implementation."""
 
@@ -29,7 +30,7 @@ class DigitizrPlugin(object):
         return QCoreApplication.translate('NGConnectPlugin', message)
 
     def initGui(self):
-        self.toolAddLineBuffer = QgsMapToolAddLineBuffer(self._iface.mapCanvas(), self._iface.cadDockWidget())
+        self.toolAddLineBuffer = QgsMapToolAddLineBuffer(self._iface, self._iface.cadDockWidget())
         
         self.addToolAddLineBufferButton()
 
